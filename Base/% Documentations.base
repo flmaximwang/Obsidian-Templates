@@ -1,0 +1,13 @@
+filters:
+  and:
+    - file.tags.contains("Memos/Documentations")
+    - parents.contains(link(this.file.name))
+properties:
+  note.abstract:
+    displayName: 摘要
+views:
+  - type: table
+    name: 文档
+    order:
+      - file.name
+      - abstract

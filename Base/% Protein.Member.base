@@ -1,0 +1,10 @@
+filters:
+  and:
+    - file.tags.contains("Memos/Proteins")
+    - parents.contains(link(this.file.name))
+views:
+  - type: table
+    name: 具体蛋白
+    order:
+      - file.name
+      - abstract

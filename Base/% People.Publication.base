@@ -1,0 +1,16 @@
+filters:
+  and:
+    - file.tags.contains("Literatures")
+    - or:
+        - note["literature-authors"].contains(link(this.file.name))
+        - note["literature-authors"].containsAny(link("Mark E. Welland"))
+views:
+  - type: table
+    name: 发表工作
+    order:
+      - file.name
+      - literature-date
+      - abstract
+    columnSize:
+      file.name: 252
+      note.literature-date: 168

@@ -1,0 +1,27 @@
+filters:
+  and:
+    - file.tags.contains("Memos/Taxa")
+    - or:
+        - note["taxon-child"].contains(this.file)
+        - list(file).containsAny(this["taxon-parent"][0].asFile().properties["taxon-parent"].map(file(value)))
+properties:
+  note.taxon-level:
+    displayName: 分类级别
+  note.taxon-reference:
+    displayName: 分类参考
+  note.taxon-parent:
+    displayName: 父类
+views:
+  - type: table
+    name: 分类
+    order:
+      - file.name
+      - taxon-level
+      - taxon-parent
+      - taxon-reference
+    sort:
+      - property: taxon-level
+        direction: ASC
+    columnSize:
+      file.name: 259
+      note.taxon-level: 130

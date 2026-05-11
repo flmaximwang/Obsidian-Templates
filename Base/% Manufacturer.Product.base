@@ -1,0 +1,7 @@
+filters:
+  and:
+    - file.tags.contains("Memos/Products")
+    - parents.contains("this.file.name")
+views:
+  - type: table
+    name: 产品列表

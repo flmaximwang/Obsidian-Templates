@@ -1,0 +1,24 @@
+filters:
+  and:
+    - file.tags.contains("Snippets")
+    - references.contains(link(this.file.name))
+properties:
+  note.keywords:
+    displayName: 关键词
+  note.abstract:
+    displayName: 摘要
+views:
+  - type: table
+    name: 笔记
+    order:
+      - file.name
+      - keywords
+      - abstract
+    sort:
+      - property: keywords
+        direction: DESC
+      - property: abstract
+        direction: DESC
+    columnSize:
+      file.name: 163
+      note.keywords: 112
