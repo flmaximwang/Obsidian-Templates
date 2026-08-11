@@ -1,0 +1,14 @@
+filters:
+  and:
+    - or:
+        - list(this.note["protocols"]).contains(note["UID"])
+        - list(this.note["protocols"]).contains(file)
+properties:
+  note.abstract:
+    displayName: 摘要
+views:
+  - type: table
+    name: 表格
+    order:
+      - file.name
+      - abstract
