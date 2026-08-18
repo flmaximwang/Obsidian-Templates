@@ -1,0 +1,12 @@
+filters:
+  and:
+    - file.name == this.file.name
+    - file != this.file
+views:
+  - type: table
+    name: 重复命名检查
+    order:
+      - file.name
+      - file.path
+    columnSize:
+      file.name: 129
