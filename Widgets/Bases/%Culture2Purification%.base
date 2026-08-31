@@ -1,0 +1,17 @@
+filters:
+  and:
+    - file.tags.contains("Logs")
+    - note["culture-pellet-source"].contains(this.note["UID"])
+views:
+  - type: table
+    name: 表格
+    order:
+      - file.name
+      - culture-pellet-original-volume-ml
+      - highlight
+    sort:
+      - property: highlight
+        direction: ASC
+    columnSize:
+      file.name: 139
+      note.culture-pellet-original-volume-ml: 256
